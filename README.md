@@ -8,20 +8,47 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'singlexyz/treesitter-frontend-textobjects' 
 ```
 
-Use for myself
+Then:
 
-`x` for attribute
+```
+require'nvim-treesitter.configs'.setup {
+ textobjects = {
+    select = {
+      enable = true,
+      keymaps = {
+        ["ax"] = "@attribute.outer",
+        ["ix"] = "@attribute.inner",
 
-`f` for function
+        ["am"] = "@import.outer",
+        ["im"] = "@import.inner",
 
-`d` for declaration
+        ["a,"] = "@lhs.outer",
+        ["i,"] = "@lhs.inner",
+        ["a."] = "@rhs.outer",
+        ["i."] = "@rhs.inner",
 
-`k` for json key
+        ["ad"] = "@declaration.outer",
+        ["id"] = "@declaration.inner",
 
-`v` for json value
+        ["ar"] = "@rule.outer",
+        ["ir"] = "@rule.inner",
 
-`,` for lhs
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["aC"] = "@class.outer",
+        ["iC"] = "@class.inner",
+        ["ac"] = "@call.outer",
+        ["ic"] = "@call.inner",
 
-`.` for lhs
+        ["a;"] = "@block.outer",
+        ["i;"] = "@block.inner",
 
-`m` for import
+        ["ak"] = "@key.outer",
+        ["ik"] = "@key.inner",
+        ["av"] = "@value.outer",
+        ["iv"] = "@value.inner",
+      },
+    },
+  },
+}
+```
