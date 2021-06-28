@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'singlexyz/treesitter-frontend-textobjects' 
@@ -10,7 +10,7 @@ Plug 'singlexyz/treesitter-frontend-textobjects'
 
 Then:
 
-```
+```lua
 require'nvim-treesitter.configs'.setup {
  textobjects = {
     select = {
