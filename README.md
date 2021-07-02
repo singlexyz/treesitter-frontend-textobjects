@@ -8,7 +8,7 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'singlexyz/treesitter-frontend-textobjects' 
 ```
 
-Then:
+## Config
 
 ```lua
 require'nvim-treesitter.configs'.setup {
