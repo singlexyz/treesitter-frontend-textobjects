@@ -15,6 +15,7 @@ require'nvim-treesitter.configs'.setup {
  textobjects = {
     select = {
       enable = true,
+      lookahead = true,
       keymaps = {
         ["ax"] = "@attribute.outer",
         ["ix"] = "@attribute.inner",
