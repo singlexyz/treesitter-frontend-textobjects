@@ -23,6 +23,8 @@ require'nvim-treesitter.configs'.setup {
         ["am"] = "@import.outer",
         ["im"] = "@import.inner",
 
+        ["at"] = "@tag.outer",
+
         ["a,"] = "@lhs.outer",
         ["i,"] = "@lhs.inner",
         ["a."] = "@rhs.outer",
