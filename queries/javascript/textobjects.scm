@@ -49,11 +49,20 @@
   ) @key.outer @value.outer)
 
 ; function
-(function_declaration body: (statement_block (_)? @function.inner)) @function.outer
-(function body: (statement_block (_)? @function.inner)) @function.outer
+(function_declaration body:
+  (_ "{" . (_) @_start (_)* @_end "}")
+  (#make-range! "function.inner" @_start @_end)
+) @function.outer
 
-(arrow_function body: (statement_block (_)? @function.inner)) @function.outer
-(arrow_function body: (_) @function.inner) @function.outer
+(function body:
+  (_ "{" . (_) @_start (_)* @_end "}")
+  (#make-range! "function.inner" @_start @_end)
+) @function.outer
+
+(arrow_function body:
+  (_ "{" . (_) @_start (_)* @_end "}")
+  (#make-range! "function.inner" @_start @_end)
+) @function.outer
 
 (export_statement
   (function_declaration) @function.outer) @function.outer.start

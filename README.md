@@ -33,9 +33,6 @@ require'nvim-treesitter.configs'.setup {
         ["ad"] = "@declaration.outer",
         ["id"] = "@declaration.inner",
 
-        ["ar"] = "@rule.outer",
-        ["ir"] = "@rule.inner",
-
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
         ["aC"] = "@class.outer",
