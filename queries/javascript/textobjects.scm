@@ -12,6 +12,15 @@
     [(named_imports) (identifier)] @import.inner)) @import.outer
 
 ; jsx attributes
+[(jsx_self_closing_element) (jsx_element)] @tag.outer
+(jsx_element (_) @tag.inner)
+
+; ((declaration
+;   (property_name) . (_) @_start
+;   (_)? @_end .)
+;   (#make-range! "rhs.inner" @_start @_end)) @rhs.outer
+
+; jsx attributes
 (jsx_self_closing_element attribute: (_) @attribute.outer)
 (jsx_self_closing_element attribute: (_ (string) @attribute.inner))
 (jsx_self_closing_element attribute: (_ (jsx_expression (_) @attribute.inner)))

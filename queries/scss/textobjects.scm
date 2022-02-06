@@ -3,8 +3,8 @@
     "{" . (_) @_start
     (_)?
   @_end "}")
-  (#make-range! "rule.inner" @_start @_end)
-) @rule.outer
+  (#make-range! "function.inner" @_start @_end)
+) @function.outer
 
 (declaration) @declaration.inner
 (declaration) @declaration.outer
